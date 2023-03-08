@@ -1,0 +1,42 @@
+---
+title: "rmarkdown rg"
+author: "Liam Reilly"
+date: "03/03/2023"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+ggplot(mtcars , aes(x= mpg , y= cyl))+
+  geom_point()
+
+```
+
+## R Markdown
+
+making an update to my first GitHub repo !!
+
+```{r}
+library(datasets)
+data("airquality")
+summary(airquality)
+```
+
+here's a pairs plot of the data
+
+
+```{r }
+pairs(airquality)
+```
+
+here's a regression model of ozone on some predictors
+
+```{r }
+fit <- lm(Ozone~ Solar.R + Wind+ Temp , data = airquality )
+summary(fit)
+```
+
